@@ -1,0 +1,26 @@
+style.css
+body {
+    background-color: lightbrown;
+    color: black;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: black;
+    color: lightbrown;
+    text-align: center;
+    padding: 10px;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#clock, #photos, #filter {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Define your styles for photos and filters as needed */

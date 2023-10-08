@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="https://use.typekit.net/iwb5eae.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Your Larken Website</title>
+</head>
+<body>
+    <header>
+        <h1>Your Larken Website</h1>
+    </header>
+    <main>
+        <section id="clock">
+            <!-- Display the current time here -->
+        </section>
+        <section id="photos">
+            <!-- Display photos of routines here -->
+        </section>
+        <aside id="filter">
+            <!-- Filter options and upload form here -->
+        </aside>
+    </main>
+</body>
+</html>
