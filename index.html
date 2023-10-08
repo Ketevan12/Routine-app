@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="https://use.typekit.net/iwb5eae.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/iwb5eae.css">
     <link rel="stylesheet" href="style.css">
     <title>Your Larken Website</title>
 </head>
@@ -12,15 +12,37 @@
         <h1>Your Larken Website</h1>
     </header>
     <main>
-        <section id="clock">
+        <section id="clock" onclick="showRoutines()">
             <!-- Display the current time here -->
+            <p id="current-time"></p>
         </section>
-        <section id="photos">
-            <!-- Display photos of routines here -->
+        <section id="routines" style="display: none;">
+            <!-- Display routines here -->
+            <p>This is where routines will appear.</p>
         </section>
-        <aside id="filter">
-            <!-- Filter options and upload form here -->
-        </aside>
     </main>
+    <script>
+        function showRoutines() {
+            // Hide the clock section
+            const clockSection = document.getElementById('clock');
+            clockSection.style.display = 'none';
+
+            // Display the routines section
+            const routinesSection = document.getElementById('routines');
+            routinesSection.style.display = 'block';
+
+            // You can load and display routines here dynamically
+        }
+
+        // Update the current time every second
+        function updateClock() {
+            const currentTimeElement = document.getElementById('current-time');
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            currentTimeElement.textContent = 'Current Time: ' + timeString;
+        }
+
+        setInterval(updateClock, 1000);
+    </script>
 </body>
 </html>
