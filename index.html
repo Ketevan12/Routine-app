@@ -79,6 +79,10 @@
             currentTimeElement.textContent = 'Current Time: ' + timeString;
         }
 
+        // Call the updateClock function when the page loads
+        updateClock();
+
+        // Set an interval to update the clock every second
         setInterval(updateClock, 1000);
     </script>
 </body>
