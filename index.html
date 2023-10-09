@@ -20,20 +20,35 @@
             text-align: center;
         }
 
-        #circle-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            margin-top: 20px;
+        #analog-clock {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            border-radius: 50%;
+            position: relative;
         }
 
-        .circle {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background-color: lightgray; /* You can set your image as the background */
-            margin: 10px;
+        .hand {
+            position: absolute;
+            transform-origin: center bottom;
+        }
+
+        #hour-hand {
+            width: 4px;
+            height: 40px;
+            background-color: black;
+        }
+
+        #minute-hand {
+            width: 3px;
+            height: 60px;
+            background-color: black;
+        }
+
+        #second-hand {
+            width: 2px;
+            height: 80px;
+            background-color: red;
         }
     </style>
 </head>
@@ -42,9 +57,13 @@
         <h1>Your Larken Website</h1>
     </header>
     <main>
-        <section id="clock" onclick="showRoutines()">
-            <!-- Display the current time here -->
-            <p id="current-time"></p>
+        <section id="clock">
+            <!-- Display the analog clock here -->
+            <div id="analog-clock">
+                <div id="hour-hand" class="hand"></div>
+                <div id="minute-hand" class="hand"></div>
+                <div id="second-hand" class="hand"></div>
+            </div>
         </section>
         <section id="routines" style="display: none;">
             <!-- Display routines here -->
@@ -71,12 +90,23 @@
             // You can load and display routines here dynamically
         }
 
-        // Update the current time every second
         function updateClock() {
-            const currentTimeElement = document.getElementById('current-time');
             const now = new Date();
-            const timeString = now.toLocaleTimeString();
-            currentTimeElement.textContent = 'Current Time: ' + timeString;
+            const hour = now.getHours();
+            const minute = now.getMinutes();
+            const second = now.getSeconds();
+
+            const hourHand = document.getElementById('hour-hand');
+            const minuteHand = document.getElementById('minute-hand');
+            const secondHand = document.getElementById('second-hand');
+
+            const hourDeg = (360 / 12) * hour + (360 / 12) * (minute / 60);
+            const minuteDeg = (360 / 60) * minute + (360 / 60) * (second / 60);
+            const secondDeg = (360 / 60) * second;
+
+            hourHand.style.transform = `rotate(${hourDeg}deg)`;
+            minuteHand.style.transform = `rotate(${minuteDeg}deg)`;
+            secondHand.style.transform = `rotate(${secondDeg}deg)`;
         }
 
         // Call the updateClock function when the page loads
