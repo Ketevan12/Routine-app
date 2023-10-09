@@ -30,7 +30,10 @@
 
         .hand {
             position: absolute;
-            transform-origin: center; /* Center of the clock */
+            top: 50%;
+            left: 50%;
+            transform-origin: left center;
+            transform: translate(-50%, -50%);
         }
 
         #hour-hand {
@@ -104,9 +107,9 @@
             const minuteDeg = (360 / 60) * minute + (360 / 60) * (second / 60);
             const secondDeg = (360 / 60) * second;
 
-            hourHand.style.transform = `rotate(${hourDeg}deg)`;
-            minuteHand.style.transform = `rotate(${minuteDeg}deg)`;
-            secondHand.style.transform = `rotate(${secondDeg}deg)`;
+            hourHand.style.transform = `translate(-50%, -50%) rotate(${hourDeg}deg)`;
+            minuteHand.style.transform = `translate(-50%, -50%) rotate(${minuteDeg}deg)`;
+            secondHand.style.transform = `translate(-50%, -50%) rotate(${secondDeg}deg)`;
         }
 
         // Call the updateClock function when the page loads
