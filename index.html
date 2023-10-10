@@ -14,6 +14,7 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
+            background-color: burlywood;
         }
 
         #clock {
@@ -33,42 +34,33 @@
             top: 50%;
             left: 50%;
             transform-origin: left center;
+          
             transform: translate(-50%, -50%);
-            position: relative;
         }
 
         #hour-hand {
             width: 4px;
             height: 40px;
-            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            clip-path: polygon(0% 0%, 100% 50%, 0% 100%, 0% 50%);
             background-color: black;
-            position: relative;
-      
         }
 
         #minute-hand {
             width: 3px;
             height: 60px;
-            clip-path: polygon(0 0, 100% 0, 50% 100%);
             background-color: black;
-            position: relative;
-         
         }
 
         #second-hand {
             width: 2px;
             height: 80px;
-            clip-path: polygon(0 0, 100% 0, 50% 100%);
-            background-color: red;
-            position: relative;
-        
+            background-color:black;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Your Larken Website</h1>
-    </header>
+   
+ 
     <main>
         <section id="clock">
             <!-- Display the analog clock here -->
