@@ -14,7 +14,7 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: burlywood;
+            background-color: rgb(222, 135, 190);
         }
 
         #clock {
@@ -85,10 +85,6 @@
         </section>
     </main>
     <script>
-         document.getElementById('clock').addEventListener('click', function() {
-    // Replace 'your-new-page.html' with the URL of the page you want to navigate to
-    window.location.href = '1index-html';
-});
         function showRoutines() {
             // Hide the clock section
             const clockSection = document.getElementById('clock');
@@ -125,8 +121,10 @@
 
         // Set an interval to update the clock every second
         setInterval(updateClock, 1000);
-
-       
+        document.getElementById('clock').addEventListener('click', function() {
+    // Replace 'your-new-page.html' with the URL of the page you want to navigate to
+    window.location.href = 'your-new-page.html';
+});
     </script>
 </body>
 </html>
